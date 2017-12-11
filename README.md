@@ -1,24 +1,32 @@
-# README
+# Favourite Programming Langauge Tool
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This task was to build a simple web application to work out the favourite programming language of a given user on Github.
 
-Things you may want to cover:
+It is a simple rails app with a form that captures a GitHub username. It then queries the GitHub API (via the [Octokit](https://github.com/octokit/octokit.rb) library) for the user's repos. We then count how many repos there are for each programming language and show the results.
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+1. Install the dependencies:
+```sh
+bundle install
+```
 
-* Configuration
+2. Run the application locally:
+```sh
+bin/rails server
+```
 
-* Database creation
+3. Navigate to the running application: http://localhost:3000/
 
-* Database initialization
+The tests can also be run via:
+```sh
+bundle exec rspec spec
+```
 
-* How to run the test suite
+## TODO
 
-* Services (job queues, cache servers, search engines, etc.)
+There are a few things which could be improved if there was more time:
 
-* Deployment instructions
+1. Caching. Currently we query the API each and everytime we make a request. It would be performant to cache the result of API queries. Then we can fetch the result from the cache, otherwise make a network request for the data.
 
-* ...
+2. Improve Tests. Currently there are only unit and controller tests. It would be ideal to also have integration tests setup. 
