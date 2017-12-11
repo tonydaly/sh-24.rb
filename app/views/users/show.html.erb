@@ -1,0 +1,24 @@
+<% if !@result.success? %>
+  <%= render partial: 'shared/error', object: @result.error %>
+<% end %>
+
+<% if @result.success? %>
+  <h1 class="f3 fw2 black-90 mv3">Result for <%= params[:username] %></h1>
+
+  <table class="collapse ba br2 b--black-10 pv2 ph3">
+    <thead>
+      <tr class="striped--light-gray">
+        <th class="pv2 ph3 tl f6 fw6 ttu">Language</th>
+        <th class="tr f6 ttu fw6 pv2 ph3">Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sorted_langs.each do |lang| %>
+        <tr class="striped--light-gray">
+          <td class="pv2 ph3"><%= lang[0] %></td>
+          <td class="pv2 ph3"><%= lang[1] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
