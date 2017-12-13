@@ -1,4 +1,4 @@
-# Favourite Programming Langauge Tool
+# Favourite Programming Language Tool
 
 This task was to build a simple web application to work out the favourite programming language of a given user on Github.
 
